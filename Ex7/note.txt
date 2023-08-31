@@ -1,0 +1,95 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documents/Homework1/advanced-git-exercises
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git branch
+  exercise2
+  exercise3
+  exercise4
+  exercise5
+  exercise6
+* exercise7
+  master
+  mundo
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit --amend
+
+[exercise7 187ad78] Commiting two new files
+ Date: Fri Sep 1 01:17:11 2023 +0700
+ 2 files changed, 2 insertions(+)
+ create mode 100644 first.txt
+ create mode 100644 second.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout -b exercise7-2
+Switched to a new branch 'exercise7-2'
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+43388fe (HEAD -> exercise7-2, origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "New feature" > feature.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add feature.tx
+t
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Adding a new feature"
+[exercise7-2 1f66571] Adding a new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout maste
+r
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "Master has continued to change" >> hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Master has continued to change"
+[master bcbaf33] Master has continued to change
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise7-2
+Switched to branch 'exercise7-2'
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rebase master
+Successfully rebased and updated refs/heads/exercise7-2.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+c372ab8 (HEAD -> exercise7-2) Adding a new feature
+bcbaf33 (master) Master has continued to change
+43388fe (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "Another newfeature" > another_feature.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add another_feature.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add another_feature.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log -n 3 --oneline
+c372ab8 (HEAD -> exercise7-2) Adding a new feature
+bcbaf33 (master) Master has continued to change
+43388fe (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rebase -i HEAD
+~2
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>XC
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rebase -i HEAD
+
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rebase --interactive HEAD~2
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>
