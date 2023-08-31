@@ -1,0 +1,165 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documenst/Homework1
+The system cannot find the path specified.
+
+C:\Users\Admin>cd Documents\Homework1
+
+C:\Users\Admin\Documents\Homework1>mkdir Ex3
+
+C:\Users\Admin\Documents\Homework1>cd advanced-git-exercises
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise3
+error: Your local changes to the following files would be overwritten by checkout:
+        hello.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Endex2"
+On branch exercise2
+Your branch is up to date with 'origin/exercise2'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise3
+error: Your local changes to the following files would be overwritten by checkout:
+        hello.txt
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git stash
+Saved working directory and index state WIP on exercise2: 43388fe Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exerc
+ise3
+Switched to a new branch 'exercise3'
+branch 'exercise3' set up to track 'origin/exercise3'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>type .git\HEAD
+ref: refs/heads/exercise3
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git branch
+  exercise2
+* exercise3
+  master
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git show-ref --hea
+ds
+43388fee19744e8893467331d7853a6475a227b8 refs/heads/exercise2
+e348ebc1187cb3b4066b1e9432a614b464bf9d07 refs/heads/exercise3
+43388fee19744e8893467331d7853a6475a227b8 refs/heads/master
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git cat-file -p 43
+388
+tree 581caa0fe56cf01dc028cc0b089d364993e046b6
+author Nina Zakharenko <nina@nnja.io> 1507168309 -0700
+committer Nina Zakharenko <nina@nnja.io> 1507168309 -0700
+
+Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git tag ex3-ne
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git show-ref --tag
+s
+e348ebc1187cb3b4066b1e9432a614b464bf9d07 refs/tags/ex3-ne
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git tag --points-a
+t e348e
+ex3-ne
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git tag -a "ex3-an
+notated-tag" -m "Cung la tag nhung la annotated tag"
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git show ex3-annot
+ated-tag
+tag ex3-annotated-tag
+Tagger: khanhhuyen <many37758@gmail.com>
+Date:   Thu Aug 31 23:21:11 2023 +0700
+
+Cung la tag nhung la annotated tag
+
+commit e348ebc1187cb3b4066b1e9432a614b464bf9d07 (HEAD -> exercise3, tag: ex3-ne, tag: ex3-annotated-tag, origin/exercise3)
+Author: Nina Zakharenko <nina@nnja.io>
+Date:   Wed Oct 4 19:01:12 2017 -0700
+
+    Testing the emergency git-casting system
+
+diff --git a/hello.txt b/hello.txt
+index 980a0d5..b31a35b 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1 +1,2 @@
+ Hello World!
++This is a test of the emergency git-casting system.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+e348ebc (HEAD -> exercise3, tag: ex3-ne, tag: ex3-annotated-tag, origin/exercise3) Testing the emergency git-casting system
+43388fe (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout e348e
+
+Note: switching to 'e348e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at e348ebc Testing the emergency git-casting system
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>cat .git\HEAD
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>type .git\HEAD
+e348ebc1187cb3b4066b1e9432a614b464bf9d07
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "This is a test file" > dangle.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add dangle.txt
+
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Dangling commit do"
+[detached HEAD f3d08fd] Dangling commit do
+ 1 file changed, 1 insertion(+)
+ create mode 100644 dangle.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+f3d08fd (HEAD) Dangling commit do
+e348ebc (tag: ex3-ne, tag: ex3-annotated-tag, origin/exercise3, exercise3) Testing the emergency git-casting system
+43388fe (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>type .git\HEAD
+f3d08fd52694cf307dc8c6a2de7a180c29ce1693
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise3
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  f3d08fd Dangling commit do
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> f3d08fd
+
+Switched to branch 'exercise3'
+Your branch is up to date with 'origin/exercise3'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>
