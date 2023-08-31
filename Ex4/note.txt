@@ -1,0 +1,197 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documents/Homework1
+
+C:\Users\Admin\Documents\Homework1>mkdir Ex4
+
+C:\Users\Admin\Documents\Homework1>cd advanced-git-exercises
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise4
+Switched to a new branch 'exercise4'
+branch 'exercise4' set up to track 'origin/exercise4'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise4
+Already on 'exercise4'
+Your branch is up to date with 'origin/exercise4'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge exercise3
+Updating 43388fe..e348ebc
+Fast-forward
+ hello.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+e348ebc (HEAD -> exercise4, tag: ex3-ne, tag: ex3-annotated-tag, origin/exercise3, exercise3) Testing the emergency git-casting system
+43388fe (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git reset --hard HEAD
+HEAD is now at e348ebc Testing the emergency git-casting system
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge --no-ffexercise3
+Already up to date.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git reset --hard H
+EAD^
+More?
+More? ?
+fatal: Cannot do hard reset with paths.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log HEAD^^
+commit 43388fee19744e8893467331d7853a6475a227b8 (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2)
+Author: Nina Zakharenko <nina@nnja.io>
+Date:   Wed Oct 4 18:51:49 2017 -0700
+
+    Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge --no-ffexercise3
+Already up to date.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git reset --hard "
+HEAD^"
+HEAD is now at 43388fe Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge --no-ffexercise3
+Merge made by the 'ort' strategy.
+ hello.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --graph
+*   commit d69f9193c384ed7a63424479b0d2fc1d8b6689b1 (HEAD -> exercise4)
+|\  Merge: 43388fe e348ebc
+| | Author: khanhhuyen <many37758@gmail.com>
+| | Date:   Thu Aug 31 23:49:47 2023 +0700
+| |
+| |     Merge branch 'exercise3' into exercise4
+| |
+| * commit e348ebc1187cb3b4066b1e9432a614b464bf9d07 (tag: ex3-ne, tag: ex3-annotated-tag, origin/exercise3, exercise3)
+|/  Author: Nina Zakharenko <nina@nnja.io>
+|   Date:   Wed Oct 4 19:01:12 2017 -0700
+|
+|       Testing the emergency git-casting system
+|
+* commit 43388fee19744e8893467331d7853a6475a227b8 (origin/master, origin/exercise7, origin/exercise4, origin/exercise2, origin/HEAD, master, exercise2)
+  Author: Nina Zakharenko <nina@nnja.io>
+  Date:   Wed Oct 4 18:51:49 2017 -0700
+
+      Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git branch
+  exercise2
+  exercise3
+* exercise4
+  master
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout -b mu
+ndo
+Switched to a new branch 'mundo'
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>cat hello.txt
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>notepad hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git status
+On branch mundo
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Cha
+nging World to Mundo!"
+[mundo 5a1e0ba] Changing World to Mundo!
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise4
+Switched to branch 'exercise4'
+Your branch is ahead of 'origin/exercise4' by 2 commits.
+  (use "git push" to publish your local commits)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>notepad hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Cha
+ing Hello to Hola"
+[exercise4 bba2d42] Chaing Hello to Hola
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git config rerere.
+enabled true
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge mundo
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Recorded preimage for 'hello.txt'
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rerere diff
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,6 +1,6 @@
+-<<<<<<<
+-Hello Mundo!
+-=======
++<<<<<<< HEAD
+ Hola World!
+->>>>>>>
++=======
++Hello Mundo!
++>>>>>>> mundo
+ This is a test of the emergency git-casting system.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>notepad hello.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>rerere diff
+'rerere' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rerere diff
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,6 +1,6 @@
+-<<<<<<<
++<<<<<<< HEAD
++Hola Mundo!
++=======
+ Hello Mundo!
+-=======
+-Hola World!
+->>>>>>>
++>>>>>>> mundo
+ This is a test of the emergency git-casting system.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add hello.txt
+                                                                           C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Merging in mundo branch"
+Recorded preimage for 'hello.txt'
+[exercise4 3b6df6a] Mrging in mundo branch
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git reset --hard "
+HEAD^"
+HEAD is now at bba2d42 Chaing Hello to Hola
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git merge mundo
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Recorded preimage for 'hello.txt'
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>type hello.txt
+<<<<<<< HEAD
+Hola World!
+=======
+Hello Mundo!
+>>>>>>> mundo
+This is a test of the emergency git-casting system.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>cat hello.txt
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>
