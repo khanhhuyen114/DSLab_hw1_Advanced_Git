@@ -1,0 +1,115 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documents
+
+C:\Users\Admin\Documents>mkdir Homework1\Ex1
+
+C:\Users\Admin\Documents>cd Homework1
+
+C:\Users\Admin\Documents\Homework1>git init
+Initialized empty Git repository in C:/Users/Admin/Documents/Homework1/.git/
+C:\Users\Admin\Documents\Homework1>echo 'Hello World!' > hello.txt
+
+C:\Users\Admin\Documents\Homework1>git add hello.txt
+
+C:\Users\Admin\Documents\Homework1>git commit -m "Initial commit"
+[master (root-commit) 8f90995] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+C:\Users\Admin\Documents\Homework1>tree .git /A /F
+Folder PATH listing for volume Windows
+Volume serial number is A2C9-C0D7
+C:\USERS\ADMIN\DOCUMENTS\HOMEWORK1\.GIT
+|   COMMIT_EDITMSG
+|   config
+|   description
+|   HEAD
+|   index
+|
++---hooks
+|       applypatch-msg.sample
+|       commit-msg.sample
+|       fsmonitor-watchman.sample
+|       post-update.sample
+|       pre-applypatch.sample
+|       pre-commit.sample
+|       pre-merge-commit.sample
+|       pre-push.sample
+|       pre-rebase.sample
+|       pre-receive.sample
+|       prepare-commit-msg.sample
+|       push-to-checkout.sample
+|       sendemail-validate.sample
+|       update.sample
+|
++---info
+|       exclude
+|
++---logs
+|   |   HEAD
+|   |
+|   \---refs
+|       \---heads
+|               master
+|
++---objects
+|   +---10
+|   |       86f661aad7332d7e343cc49afc46f942c00dfd
+|   |
+|   +---8f
+|   |       9099505f9f2f86bcd4132c84b90e6072803927
+|   |
+|   +---d3
+|   |       8752edff821f8f38fe3efbe3d80e0ae997f5b1
+|   |
+|   +---info
+|   \---pack
+\---refs
+    +---heads
+    |       master
+    |
+    \---tags
+
+C:\Users\Admin\Documents\Homework1>git cat-file -t 1086f
+tree
+
+C:\Users\Admin\Documents\Homework1>git cat-file -p 1086f
+100644 blob d38752edff821f8f38fe3efbe3d80e0ae997f5b1    hello.txt
+
+C:\Users\Admin\Documents\Homework1>git cat-file -t 8f909
+commit
+
+C:\Users\Admin\Documents\Homework1>git cat-file -p 8f909
+tree 1086f661aad7332d7e343cc49afc46f942c00dfd
+author khanhhuyen <many37758@gmail.com> 1693496734 +0700
+committer khanhhuyen <many37758@gmail.com> 1693496734 +0700
+
+Initial commit
+
+C:\Users\Admin\Documents\Homework1>git cat-file -t d3875
+blob
+
+C:\Users\Admin\Documents\Homework1>git cat-file -p d3875
+'Hello World!'
+
+C:\Users\Admin\Documents\Homework1>type .git\HEAD
+ref: refs/heads/master
+
+C:\Users\Admin\Documents\Homework1>git log --oneline
+8f90995 (HEAD -> master) Initial commit
+
+C:\Users\Admin\Documents\Homework1>git branch new_branch
+
+C:\Users\Admin\Documents\Homework1>tree .git/refs /A /F
+Folder PATH listing for volume Windows
+Volume serial number is A2C9-C0D7
+C:\USERS\ADMIN\DOCUMENTS\HOMEWORK1\.GIT\REFS
++---heads
+|       master
+|       new_branch
+|
+\---tags
+
+C:\Users\Admin\Documents\Homework1>
