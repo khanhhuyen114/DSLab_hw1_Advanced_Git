@@ -1,0 +1,86 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documents/Homework1
+
+C:\Users\Admin\Documents\Homework1>mkdir Ex10
+
+C:\Users\Admin\Documents\Homework1>git checkout exercise10
+error: pathspec 'exercise10' did not match any file(s) known to git
+
+C:\Users\Admin\Documents\Homework1>cd advanced-git-exercises
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout exercise10
+Previous HEAD position was 88f6e28 Adding bash, python, and java code examples
+Switched to a new branch 'exercise10'
+branch 'exercise10' set up to track 'upstream/exercise10'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>cp pre-commit .git/hooks/pre-commit
+'cp' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>cp pre-commit .git\hooks\pre-commit
+'cp' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>copy pre-commit .git\hooks\pre-commit
+        1 file(s) copied.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>icacls .git/hooks/pre-commit
+.git/hooks/pre-commit NT AUTHORITY\SYSTEM:(I)(F)
+                      BUILTIN\Administrators:(I)(F)
+                      LAPTOP-750LQDDF\Admin:(I)(F)
+
+Successfully processed 1 files; Failed processing 0 files
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "Bad bash scr
+ipt" > test_script.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add test_scrip
+t.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Add
+ing a new test script"
+error: cannot spawn .git/hooks/pre-commit: No such file or directory
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "#!/bin/bash\
+n Good bad script" > test_script.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add test_scrip
+t.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>commit -m "Adding
+a new test script"
+'commit' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Adding a new test script"
+error: cannot spawn .git/hooks/pre-commit: No such file or directory
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>#!/bin/bash
+'#!' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo '#!/bin/bash\n Good bash script' > test_script.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add test_script.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Adding a new test script"
+error: cannot spawn .git/hooks/pre-commit: No such file or directory
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "#!/bin/sh\nGood bad script" > test_script.sh
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Adding a new test script"
+error: cannot spawn .git/hooks/pre-commit: No such file or directory
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>rm .git/hooks/pre-commit
+'rm' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rm .git/hooks/pre-commit
+fatal: pathspec '.git/hooks/pre-commit' did not match any files
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git rm .git\hooks\pre-commit
+fatal: pathspec '.git\hooks\pre-commit' did not match any files
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>
