@@ -1,0 +1,103 @@
+Microsoft Windows [Version 10.0.22621.2134]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>cd Documents/Homework1/advanced-git-exercises
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout master
+Already on 'master'
+Your branch and 'origin/master' have diverged,
+and have 2 and 14 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git remote -v
+origin  https://github.com/khanhhuyen114/advanced-git.git (fetch)
+origin  https://github.com/khanhhuyen114/advanced-git.git (push)
+upstream        https://github.com/nnja/advanced-git-exercises (fetch)
+upstream        https://github.com/nnja/advanced-git-exercises (push)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git remote add origin https://github.com/khanhhuyen114/advanced-git.git
+error: remote origin already exists.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git remote -v
+origin  https://github.com/khanhhuyen114/advanced-git.git (fetch)
+origin  https://github.com/khanhhuyen114/advanced-git.git (push)
+upstream        https://github.com/nnja/advanced-git-exercises (fetch)
+upstream        https://github.com/nnja/advanced-git-exercises (push)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout master
+Already on 'master'
+Your branch and 'origin/master' have diverged,
+and have 2 and 14 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git pull origin master --allow-unrelated-histories
+From https://github.com/khanhhuyen114/advanced-git
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ .gitattributes                             |   1 +
+ README.md                                  |  42 +++++
+ exercises/Exercise1-SimpleCommit.md        | 163 ++++++++++++++++++
+ exercises/Exercise10-Hooks.md              |  57 +++++++
+ exercises/Exercise11-GitHubAPI.md          | 168 ++++++++++++++++++
+ exercises/Exercise2-StagingAndStashing.md  | 189 +++++++++++++++++++++
+ exercises/Exercise3-References.md          | 187 ++++++++++++++++++++
+ exercises/Exercise4-MergingAndReReRe.md    | 245 ++++++++++++++++++++++++++
+ exercises/Exercise5-HistoryAndDiffs.md     | 183 ++++++++++++++++++++
+ exercises/Exercise6-FixingMistakes.md      | 264 +++++++++++++++++++++++++++++
+ exercises/Exercise7-RebaseAndAmend.md      | 225 ++++++++++++++++++++++++
+ exercises/Exercise8-ForksAndRemoteRepos.md | 139 +++++++++++++++
+ exercises/Exercise9-AdvancedTools.md       | 200 ++++++++++++++++++++++
+ images/git-in-depth.png                    |   3 +
+ presentation/slides.pdf                    | Bin 0 -> 10692341 bytes
+ 15 files changed, 2066 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 README.md
+ create mode 100644 exercises/Exercise1-SimpleCommit.md
+ create mode 100644 exercises/Exercise10-Hooks.md
+ create mode 100644 exercises/Exercise11-GitHubAPI.md
+ create mode 100644 exercises/Exercise2-StagingAndStashing.md
+ create mode 100644 exercises/Exercise3-References.md
+ create mode 100644 exercises/Exercise4-MergingAndReReRe.md
+ create mode 100644 exercises/Exercise5-HistoryAndDiffs.md
+ create mode 100644 exercises/Exercise6-FixingMistakes.md
+ create mode 100644 exercises/Exercise7-RebaseAndAmend.md
+ create mode 100644 exercises/Exercise8-ForksAndRemoteRepos.md
+ create mode 100644 exercises/Exercise9-AdvancedTools.md
+ create mode 100644 images/git-in-depth.png
+ create mode 100644 presentation/slides.pdf
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git branch --set-upstream-to origin/master
+branch 'master' set up to track 'origin/master'.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git checkout -b `feature`
+Switched to a new branch '`feature`'
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>echo "Change to local repo" > local_change.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git add local_change.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git commit -m "Change to local repo"
+[`feature` 26b56f1] Change to local repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 local_change.txt
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git pull --rebaseupstream master
+From https://github.com/nnja/advanced-git-exercises
+ * branch            master     -> FETCH_HEAD
+Successfully rebased and updated refs/heads/`feature`.
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>git log --oneline
+c8757ba (HEAD -> `feature`) Change to local repo
+17fb8b6 Add HEAD^ to git reset --hard in instructions (#11)
+25d417c Update README with links to the course video
+a79bf3b Update Exercise3-References.md
+0a9659f Fix spelling
+24ebdb8 Fix typo
+3b03fd7 fix exercise name on exercise 3
+d7a09df Update Exercise2-StagingAndStashing.md
+bc7d6cc Fix Link in Ex2
+6cbb524 Initial commit
+bcbaf33 Master has continued to change
+43388fe (upstream/master, upstream/exercise7, upstream/exercise4, upstream/exercise2, upstream/HEAD, exercise2) Initial commit
+
+C:\Users\Admin\Documents\Homework1\advanced-git-exercises>
