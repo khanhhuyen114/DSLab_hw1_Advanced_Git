@@ -1,2 +1,2 @@
-'#!/bin/sh' 
-"Bad bash script" 
+#!/bin/sh
+Good bash script
